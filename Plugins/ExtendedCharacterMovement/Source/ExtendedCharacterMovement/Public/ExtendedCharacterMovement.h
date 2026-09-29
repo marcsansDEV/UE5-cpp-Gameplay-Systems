@@ -4,6 +4,9 @@
 
 #include "Modules/ModuleManager.h"
 
+class FToolBarBuilder;
+class FMenuBuilder;
+
 class FExtendedCharacterMovementModule : public IModuleInterface
 {
 public:
@@ -11,4 +14,15 @@ public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
+	
+	/** This function will be bound to Command. */
+	void PluginButtonClicked();
+	
+private:
+
+	void RegisterMenus();
+
+
+private:
+	TSharedPtr<class FUICommandList> PluginCommands;
 };

@@ -3,21 +3,21 @@
 	"Version": 1,
 	"VersionName": "1.0",
 	"FriendlyName": "ExtendedCharacterMovement",
-	"Description": "",
+	"Description": "Custom movement modes built on top of the Character Movement Component.",
 	"Category": "Other",
-	"CreatedBy": "marcsansDEV",
-	"CreatedByURL": "",
+	"CreatedBy": "Marc Sans Cormenzana",
+	"CreatedByURL": "https://github.com/marcsansDEV",
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"CanContainContent": true,
+	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
 		{
 			"Name": "ExtendedCharacterMovement",
-			"Type": "Runtime",
+			"Type": "Editor",
 			"LoadingPhase": "Default"
 		}
 	]
