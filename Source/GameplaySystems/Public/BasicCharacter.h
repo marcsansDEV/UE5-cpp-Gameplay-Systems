@@ -4,7 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InputActionValue.h"
+
+class UInputMappingContext;
+class UInputAction;
+
 #include "BasicCharacter.generated.h"
+
 
 UCLASS()
 class GAMEPLAYSYSTEMS_API ABasicCharacter : public ACharacter
@@ -16,10 +22,20 @@ public:
 	ABasicCharacter();
 
 protected:
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	void Move(const FInputActionValue& Value);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputMappingContext* DefaultMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* MoveAction;
+
 public:	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
