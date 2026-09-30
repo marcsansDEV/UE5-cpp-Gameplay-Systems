@@ -11,7 +11,6 @@ class UInputAction;
 
 #include "BasicCharacter.generated.h"
 
-
 UCLASS()
 class GAMEPLAYSYSTEMS_API ABasicCharacter : public ACharacter
 {
