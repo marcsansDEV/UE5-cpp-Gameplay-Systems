@@ -30,9 +30,9 @@ void AThirdPersonCharacter::Look(const FInputActionValue& Value)
 	FVector2D LookVector = Value.Get<FVector2D>();
 
 	AddControllerYawInput(LookVector.X);
-	AddControllerPitchInput(LookVector.Y);
+	AddControllerPitchInput(-LookVector.Y);
 
-	UE_LOG(LogTemp, Warning, TEXT("Look input: YawDelta = %f, PitchDelta = %f"), LookVector.X, LookVector.Y);
+	UE_LOG(LogTemp, Warning, TEXT("Look input: YawDelta = %f, PitchDelta = %f"), LookVector.X, -LookVector.Y);
 }
 
 void AThirdPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

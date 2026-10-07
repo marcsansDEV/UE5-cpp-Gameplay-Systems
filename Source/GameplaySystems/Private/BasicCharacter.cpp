@@ -55,6 +55,18 @@ void ABasicCharacter::Move(const FInputActionValue& Value)
 	}
 }
 
+void ABasicCharacter::Jump(const FInputActionValue& Value)
+{
+	if (Value.Get<bool>())
+	{
+		ACharacter::Jump();
+	}
+	else
+	{
+		ACharacter::StopJumping();
+	}
+}
+
 // Called every frame
 void ABasicCharacter::Tick(float DeltaTime)
 {
@@ -74,6 +86,12 @@ void ABasicCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 			ETriggerEvent::Triggered,
 			this,
 			&ABasicCharacter::Move
+		);
+		EnhancedInput->BindAction(
+			JumpAction,
+			ETriggerEvent::Triggered,
+			this,
+			&ABasicCharacter::Jump
 		);
 	}
 
